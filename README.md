@@ -1,28 +1,31 @@
 # Sanelint
 
-TODO: Write a gem description
+Code lint utility with sane configuration
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'sanelint'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sanelint
+```bash
+gem install sanelint
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Go to project directory and nd then execute:
+
+```bash
+sanelint
+```
+
+## About
+
+sanelint make use of two well known projects:
+
+- [rails_best_practices](https://github.com/railsbp/rails_best_practices)
+- [brakeman](https://github.com/presidentbeef/brakeman)
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/sanelint/fork )
+1. Fork it ( http://github.com/monterail/sanelint/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

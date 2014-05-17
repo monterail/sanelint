@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "sanelint"
   spec.version       = Sanelint::VERSION
   spec.authors       = ["Tymon Tobolski"]
-  spec.email         = ["i@teamon.eu"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["tymon.tobolski@monterail.com"]
+  spec.summary       = %q{Sane Ruby/Rails linter.}
+  spec.description   = %q{Ruby/Rails linter. Sane stuff only}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -17,6 +17,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "rails_best_practices"
+  spec.add_dependency "brakeman"
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"

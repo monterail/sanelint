@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= File.basename(root) %> Sanelint Report</title>
+  <style type="text/css">
+    body {
+      font: 12px sans-serif;
+    }
+    .container { margin: 50px; }
+    table {
+      border-collapse: collapse;
+    }
+    th {
+      font-weight: bold;
+    }
+    td,th { padding: 5px; border: 1px solid #eee;}
+    pre {
+      overflow: scroll;
+      max-width: 300px
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table class="table table-striped">
+      <tr>
+        <th>#</th>
+        <th>File</th>
+        <th>Error</th>
+        <th>Code</th>
+        <th>Commit</th>
+      </tr>
+      <% @entries.each_with_index do |entry, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><code><%= entry.file %>:<%= entry.line %></code></td>
+
+          <td>
+            <% if entry.link %>
+              <a href="<%= entry.link %>"><%= entry.message %></a>
+            <% else %>
+              <%= entry.message %>
+            <% end %>
+          </td>
+
+          <td>
+            <pre><%= entry.code %></pre>
+          </td>
+
+          <td>
+            <a href="http://github.com/<%= git_repo %>/commit/<%= entry.git_commit %>">
+              <%= entry.git_commit %>
+            </a>
+            <br>
+            <%= entry.git_username %>
+            <br>
+            <%= entry.git_date %>
+          </td>
+
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+</body>
+</html>

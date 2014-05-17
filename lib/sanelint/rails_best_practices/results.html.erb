@@ -1,0 +1,13 @@
+<%=
+@errors.map do |error|
+  {
+    :level        => "warning",
+    :file         => error.short_filename,
+    :line         => error.line_number,
+    :message      => error.message,
+    :link         => error.url,
+    :git_commit   => error.git_commit,
+    :git_username => error.git_username
+  }
+end.to_json
+%>
