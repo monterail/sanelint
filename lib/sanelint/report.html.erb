@@ -1,64 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title><%= File.basename(root) %> Sanelint Report</title>
-  <style type="text/css">
+
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+  <style>
+    /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
     body {
-      font: 12px sans-serif;
+      font-size: 14px;
+      font-family: 'Inconsolata', monospace;
+
+      width:1200px;
+      margin: 20px auto;
     }
-    .container { margin: 50px; }
+
     table {
       border-collapse: collapse;
+      border: 0px;
     }
-    th {
-      font-weight: bold;
+
+    tr:nth-child(even) {background: #e4e4e4}
+    tr:nth-child(odd) {background: #f4f4f4}
+
+    td {
+      padding: 15px 10px;
     }
-    td,th { padding: 5px; border: 1px solid #eee;}
-    pre {
-      overflow: scroll;
-      max-width: 300px
+    tr.small > td {
+      color: #333;
+      padding: 15px 10px;
+      padding-bottom: 0px;
     }
+    td.narrow {
+      width:20px;
+    }
+    td.wide {
+      max-width:570px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #f56200;
+    }
+    .code {
+      padding: 5px;
+      border-radius: 3px;
+      background-color: #556;
+      color: #ddd;
+      line-height: 1.5em;
+    }
+
   </style>
+
 </head>
 <body>
   <div class="container">
-    <table class="table table-striped">
-      <tr>
-        <th>#</th>
-        <th>File</th>
-        <th>Error</th>
-        <th>Code</th>
-        <th>Commit</th>
-      </tr>
-      <% @entries.each_with_index do |entry, index| %>
-        <tr>
-          <td><%= index + 1 %></td>
-          <td><code><%= entry.file %>:<%= entry.line %></code></td>
 
-          <td>
+    <table>
+
+      <% @entries.each_with_index do |entry, index| %>
+
+      <tr class="small">
+        <td class="narrow">
+          <%= index + 1 %>
+        </td>
+
+        <td class="wide">
+            <%= entry.git_date %>, <%= entry.git_username %>
+            <br />
             <% if entry.link %>
               <a href="<%= entry.link %>"><%= entry.message %></a>
             <% else %>
               <%= entry.message %>
             <% end %>
-          </td>
+        </td>
 
-          <td>
-            <pre><%= entry.code %></pre>
-          </td>
+        <td class="wide">
+          <%= entry.file %>:<%= entry.line %> →
+          <a href="http://github.com/<%= git_repo %>/commit/<%= entry.git_commit %>"><%= entry.git_commit %></a>
+          <br />
+          <div class="code"><%= entry.line %>: <%= entry.code %></div>
+        </td>
+      </tr>
 
-          <td>
-            <a href="http://github.com/<%= git_repo %>/commit/<%= entry.git_commit %>">
-              <%= entry.git_commit %>
-            </a>
-            <br>
-            <%= entry.git_username %>
-            <br>
-            <%= entry.git_date %>
-          </td>
-
-        </tr>
       <% end %>
+
     </table>
   </div>
 
