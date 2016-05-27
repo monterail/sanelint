@@ -7,6 +7,8 @@ This gem encapsulate rubocop config for [Monterail](monterail.com).
 Add this line to your application's Gemfile:
 
 ```ruby
+# You don't need to install Rubocop or Rubocop-Rspec - they are added as this gem dependency to
+# prevent config from being incompatibile with installed Rubocop version.
 gem 'sanelint'
 ```
 
@@ -14,37 +16,15 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install sanelint
-
-## Usage
-
-You need to tell RuboCop to load the Sanelint config. There are three ways to do this:
-
-### RuboCop configuration file
-
-Put this into your `.rubocop.yml`:
+After that you need to add `sanelint` as plugin for Rubocop in your `.rubocop.yml`:
 
 ```yaml
-require: rubocop-cask
+require: sanelint
 ```
 
-Now you can run `rubocop` and it will automatically load the RuboCop Cask cops together with the standard cops.
+or create a new one:
 
-### Command line
-
-```bash
-rubocop --require rubocop-cask
-```
-
-### Rake task
-
-```ruby
-RuboCop::RakeTask.new do |task|
-  task.requires << 'rubocop-cask'
-end
-```
+    $ echo "require: sanelint" > .rubocop.yml
 
 ## Development
 
