@@ -60,6 +60,22 @@ Style/ParallelAssignment:
 Style/Lambda:
   Enabled: false
 
+#not appliable for rails<5
+Rails/HttpPositionalArguments:
+  Enabled: false
+#not appliable for ruby<2.4
+Lint/UnifiedInteger:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
 
 Metrics/LineLength:
   Max: 100
@@ -72,7 +88,7 @@ Metrics/ModuleLength:
 
 
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Lint/AssignmentInCondition:
   Enabled: false
