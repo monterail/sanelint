@@ -6,8 +6,8 @@ require 'sanelint/version'
 Gem::Specification.new do |spec|
   spec.name          = "sanelint"
   spec.version       = Sanelint::VERSION
-  spec.authors       = ["Michał Simka"]
-  spec.email         = ["michal.simka@monterail.com"]
+  spec.authors       = ["Monterail.com"]
+  spec.email         = ["services@monterail.com"]
 
   spec.summary       = %q{Gem to encapsulate Monterail's company-wide rubocop setup.}
   spec.description   = %q{Gem to encapsulate Monterail's company-wide rubocop setup.}
@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "rubocop", "~> 0.40.0"
-  spec.add_runtime_dependency "rubocop-rspec", "~> 1.5.0"
+  spec.add_runtime_dependency "rubocop", "~> 0.47"
+  spec.add_runtime_dependency "rubocop-rspec", "~> 1.13"
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"

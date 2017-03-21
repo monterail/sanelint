@@ -72,7 +72,7 @@ Metrics/ModuleLength:
 
 
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Lint/AssignmentInCondition:
   Enabled: false
