@@ -6,8 +6,8 @@ require 'sanelint/version'
 Gem::Specification.new do |spec|
   spec.name          = "sanelint"
   spec.version       = Sanelint::VERSION
-  spec.authors       = ["Michał Simka"]
-  spec.email         = ["michal.simka@monterail.com"]
+  spec.authors       = ["Monterail.com"]
+  spec.email         = ["services@monterail.com"]
 
   spec.summary       = %q{Gem to encapsulate Monterail's company-wide rubocop setup.}
   spec.description   = %q{Gem to encapsulate Monterail's company-wide rubocop setup.}
