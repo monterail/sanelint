@@ -19,12 +19,11 @@ And then execute:
 After that you need to add `sanelint` as plugin for Rubocop in your `.rubocop.yml`:
 
 ```yaml
-require: sanelint
+inherit_gem:
+  sanelint:
+    - config/default.yml
 ```
 
-or create a new one:
-
-    $ echo "require: sanelint" > .rubocop.yml
 
 ## Development
 
