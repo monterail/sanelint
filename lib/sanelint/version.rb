@@ -1,3 +1,3 @@
 module Sanelint
-  VERSION = "1.0.2".freeze
+  VERSION = "49.1".freeze
 end

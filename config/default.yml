@@ -28,10 +28,10 @@ Documentation:
 Style/BarePercentLiterals:
   EnforcedStyle: percent_q
 
-Style/EmptyLineBetweenDefs:
+Layout/EmptyLineBetweenDefs:
   AllowAdjacentOneLineDefs: true
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 Style/StringLiterals:
@@ -61,14 +61,6 @@ Style/ParallelAssignment:
 Style/Lambda:
   Enabled: false
 
-#not appliable for rails<5
-Rails/HttpPositionalArguments:
-  Enabled: false
-
-#not appliable for ruby<2.4
-Lint/UnifiedInteger:
-  Enabled: false
-
 Rails/SkipsModelValidations:
   Enabled: false
 
@@ -77,7 +69,6 @@ Style/SafeNavigation:
 
 Bundler/OrderedGems:
   Enabled: false
-
 
 Metrics/LineLength:
   Max: 100
@@ -88,7 +79,6 @@ Metrics/ClassLength:
 Metrics/ModuleLength:
   Max: 150
 
-
 Lint/EndAlignment:
   EnforcedStyleAlignWith: variable
 
@@ -98,3 +88,13 @@ Lint/AssignmentInCondition:
 Lint/AmbiguousRegexpLiteral:
   Exclude:
     - 'features/step_definitions/**/*.rb'
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '()'
+    '%w': '()'
+    '%W': '()'
