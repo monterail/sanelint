@@ -7,7 +7,7 @@ module RuboCop
     # bit of our configuration.
     module Inject
       DEFAULT_FILE = File.expand_path(
-        '../../../../config/default.yml', __FILE__
+        "../../../../config/default.yml", __FILE__
       )
 
       def self.defaults!

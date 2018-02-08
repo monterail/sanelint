@@ -1,7 +1,7 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'sanelint/version'
+require "sanelint/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "sanelint"
@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "rubocop", "~> 0.49.1"
-  spec.add_runtime_dependency "rubocop-rspec", "~> 1.16.0"
+  spec.add_runtime_dependency "rubocop", "~> 0.52.1"
+  spec.add_runtime_dependency "rubocop-rspec", "~> 1.22.2"
 
-  spec.add_development_dependency "bundler", "~> 1.10"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler", "~> 1.16"
+  spec.add_development_dependency "rake", "~> 12.3"
 end
