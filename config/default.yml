@@ -46,7 +46,10 @@ Style/BracesAroundHashParameters:
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
 Style/DoubleNegation:
@@ -79,7 +82,7 @@ Metrics/ClassLength:
 Metrics/ModuleLength:
   Max: 150
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
 Lint/AssignmentInCondition:
